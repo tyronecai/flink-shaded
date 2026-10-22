@@ -65,6 +65,7 @@ under the License.
                             <artifactSet>
                                 <includes>
                                     <include>io.netty:netty-tcnative</include>
+                                    <include>io.netty:netty-tcnative-classes</include>
                                 </includes>
                             </artifactSet>
                             <relocations>
