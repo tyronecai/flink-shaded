@@ -125,6 +125,15 @@ under the License.
                             <groupId>io.netty</groupId>
                             <artifactId>netty-tcnative</artifactId>
                             <version>${netty.tcnative.version}</version>
+                            <classifier>osx-aarch_64</classifier>
+                            <type>jar</type>
+                            <overWrite>false</overWrite>
+                            <outputDirectory>${project.build.directory}/native_libs</outputDirectory>
+                        </artifactItem>
+                        <artifactItem>
+                            <groupId>io.netty</groupId>
+                            <artifactId>netty-tcnative</artifactId>
+                            <version>${netty.tcnative.version}</version>
                             <classifier>linux-aarch_64-fedora</classifier>
                             <type>jar</type>
                             <overWrite>false</overWrite>
@@ -149,6 +158,7 @@ under the License.
                                 <!-- Fix the dynamically linked native libraries in netty-tcnative -->
                                 <unzip src="${project.build.directory}/native_libs/netty-tcnative-${netty.tcnative.version}-linux-x86_64.jar" dest="${project.build.directory}/native_libs/unpacked/" />
                                 <unzip src="${project.build.directory}/native_libs/netty-tcnative-${netty.tcnative.version}-osx-x86_64.jar" dest="${project.build.directory}/native_libs/unpacked/" />
+                                <unzip src="${project.build.directory}/native_libs/netty-tcnative-${netty.tcnative.version}-osx-aarch_64.jar" dest="${project.build.directory}/native_libs/unpacked/" />
                                 <unzip src="${project.build.directory}/native_libs/netty-tcnative-${netty.tcnative.version}-linux-aarch_64-fedora.jar" dest="${project.build.directory}/native_libs/unpacked/" />
                                 <move todir="${project.build.directory}/unpacked/META-INF/native" includeemptydirs="false">
                                     <fileset dir="${project.build.directory}/native_libs/unpacked/META-INF/native"/>
